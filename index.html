@@ -1,368 +1,383 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>אישור איסוף ארבעת המינים</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --palm-green: #2d4a22;
-      --palm-dark: #1e3317;
-      --gold: #d4af37;
-      --gold-hover: #b89628;
-      --sand-bg: #f8f6f0;
-      --card-bg: #ffffff;
-      --text-main: #2b2b2b;
-      --text-muted: #666666;
-      --error-red: #d9534f;
-      --success-green: #28a745;
-    }
-
-    * {
-      box-sizing: border-box;
-      font-family: 'Rubik', sans-serif;
-    }
-
-    body {
-      background-color: var(--sand-bg);
-      background-image: radial-gradient(var(--palm-green) 0.5px, transparent 0.5px);
-      background-size: 24px 24px;
-      background-color: #f3f0e6;
-      color: var(--text-main);
-      min-height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 440px;
-      background: var(--card-bg);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      padding: 32px 24px;
-      text-align: center;
-      border: 1px solid rgba(45, 74, 34, 0.1);
-    }
-
-    .header-icon {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      color: var(--palm-green);
-      font-size: 24px;
-      margin: 0 0 8px 0;
-      font-weight: 700;
-    }
-
-    p.subtitle {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin: 0 0 24px 0;
-      line-height: 1.5;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-      text-align: right;
-    }
-
-    label {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--palm-dark);
-      margin-bottom: 8px;
-    }
-
-    input[type="tel"] {
-      width: 100%;
-      padding: 14px;
-      font-size: 18px;
-      border: 2px solid #e0e0e0;
-      border-radius: 12px;
-      text-align: center;
-      direction: ltr;
-      letter-spacing: 2px;
-      transition: all 0.2s ease;
-      outline: none;
-    }
-
-    input[type="tel"]:focus {
-      border-color: var(--palm-green);
-      box-shadow: 0 0 0 3px rgba(45, 74, 34, 0.15);
-    }
-
-    button {
-      width: 100%;
-      background-color: var(--gold);
-      color: #ffffff;
-      border: none;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.1s ease;
-      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-    }
-
-    button:hover {
-      background-color: var(--gold-hover);
-    }
-
-    button:active {
-      transform: scale(0.98);
-    }
-
-    button.secondary {
-      background-color: transparent;
-      color: var(--text-muted);
-      box-shadow: none;
-      border: 1px solid #ddd;
-    }
-
-    button.secondary:hover {
-      background-color: #f5f5f5;
-      color: var(--text-main);
-    }
-
-    .greeting {
-      font-size: 20px;
-      color: var(--palm-green);
-      margin-bottom: 12px;
-    }
-
-    .order-summary {
-      background: #fdfbf7;
-      border: 1px solid #e8e2d5;
-      border-radius: 12px;
-      padding: 16px;
-      margin: 16px 0 20px 0;
-      text-align: right;
-    }
-
-    .order-summary h4 {
-      margin: 0 0 10px 0;
-      font-size: 15px;
-      color: var(--palm-green);
-      border-bottom: 1px solid #eee;
-      padding-bottom: 6px;
-    }
-
-    .order-summary ul {
-      margin: 0;
-      padding-right: 18px;
-      font-size: 14px;
-      color: var(--text-main);
-    }
-
-    .order-summary li {
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
-
-    .msg {
-      margin-top: 16px;
-      font-size: 14px;
-      min-height: 20px;
-    }
-
-    .msg.error {
-      color: var(--error-red);
-    }
-
-    .msg.success {
-      color: var(--success-green);
-      font-weight: 600;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255,255,255,.3);
-      border-radius: 50%;
-      border-top-color: #fff;
-      animation: spin 0.8s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>אישור איסוף ארבעת המינים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --loam:#2E3B26;
+    --loam-dark:#20291B;
+    --citron:#C9A227;
+    --citron-light:#E4C863;
+    --palm:#6C8863;
+    --parchment:#F6F1E2;
+    --ink:#22281D;
+    --ink-soft:#5A6350;
+    --error:#A8432F;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--loam);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(201,162,39,0.10), transparent 45%),
+      radial-gradient(circle at 85% 92%, rgba(201,162,39,0.08), transparent 45%);
+    color:var(--parchment);
+    font-family:'Assistant', sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:32px 18px 48px;
+  }
+  .wrap{
+    width:100%;
+    max-width:440px;
+    text-align:center;
+  }
+  .frond{
+    width:180px;
+    height:auto;
+    margin:0 auto 18px;
+    display:block;
+    opacity:0.9;
+  }
+  h1{
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:700;
+    font-size:28px;
+    line-height:1.3;
+    margin:0 0 10px;
+    color:var(--parchment);
+  }
+  .sub{
+    font-size:15px;
+    color:var(--citron-light);
+    margin:0 0 28px;
+    line-height:1.6;
+  }
+  .card{
+    background:var(--parchment);
+    color:var(--ink);
+    border-radius:18px;
+    padding:28px 24px 26px;
+    text-align:right;
+    box-shadow:0 18px 40px rgba(0,0,0,0.28);
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:6px;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--citron) 0 10px,
+      var(--palm) 10px 20px
+    );
+  }
+  label{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  input[type="text"]{
+    width:100%;
+    font-family:'Assistant', sans-serif;
+    font-size:18px;
+    padding:12px 14px;
+    border:2px solid #DCD4BC;
+    border-radius:10px;
+    background:#FFFDF7;
+    color:var(--ink);
+    text-align:right;
+  }
+  input[type="text"]:focus{
+    outline:none;
+    border-color:var(--palm);
+  }
+  .order-details{
+    list-style:none;
+    margin:0 0 20px;
+    padding:14px 16px;
+    background:#FFFDF7;
+    border:1px solid #DCD4BC;
+    border-radius:10px;
+    font-size:14px;
+  }
+  .order-details li{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:6px 0;
+  }
+  .order-details li + li{
+    border-top:1px solid #ECE6D3;
+  }
+  .order-details .label{
+    color:var(--ink-soft);
+  }
+  .order-details .value{
+    font-weight:700;
+    text-align:left;
+  }
+  button{
+    width:100%;
+    margin-top:16px;
+    font-family:'Assistant', sans-serif;
+    font-size:17px;
+    font-weight:700;
+    padding:14px 12px;
+    border:none;
+    border-radius:10px;
+    background:var(--citron);
+    color:var(--loam-dark);
+    cursor:pointer;
+    transition:transform 0.12s ease, background 0.15s ease;
+  }
+  button:hover{ background:var(--citron-light); }
+  button:active{ transform:scale(0.98); }
+  button:disabled{
+    opacity:0.6;
+    cursor:default;
+    transform:none;
+  }
+  button.secondary{
+    background:transparent;
+    border:2px solid var(--palm);
+    color:var(--palm);
+    font-weight:600;
+    font-size:15px;
+    padding:10px 12px;
+  }
+  .msg{
+    font-size:14px;
+    margin:14px 0 0;
+    line-height:1.6;
+  }
+  .msg.error{ color:var(--error); font-weight:600; }
+  .greeting{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:20px;
+    margin:0 0 18px;
+  }
+  .greeting strong{ color:var(--palm); }
+  .done{
+    font-size:18px;
+    font-weight:700;
+    color:var(--palm);
+    margin:6px 0 4px;
+  }
+  .done-sub{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .checkmark{
+    width:56px;height:56px;margin:0 auto 14px;
+    border-radius:50%;
+    background:var(--palm);
+    display:flex;align-items:center;justify-content:center;
+    animation:pop 0.35s ease;
+  }
+  .checkmark svg{ width:28px; height:28px; }
+  @keyframes pop{
+    from{ transform:scale(0.6); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+  }
+  [hidden]{ display:none !important; }
+  .step{ transition:opacity 0.2s ease; }
+  footer{
+    margin-top:26px;
+    font-size:12px;
+    color:rgba(246,241,226,0.55);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .checkmark{ animation:none; }
+    button{ transition:none; }
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-  <div class="container">
-    <div class="header-icon">🌿</div>
-    <h1>אישור איסוף ארבעת המינים</h1>
-    <p class="subtitle">אנא הזינו את מספר הטלפון שאיתו ביצעתם את ההזמנה כדי לאשר את האיסוף</p>
+  <svg class="frond" viewBox="0 0 220 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M10 60 Q 60 10 110 35 Q 160 10 210 60" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M20 55 Q 65 22 110 40" stroke="#6C8863" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M200 55 Q 155 22 110 40" stroke="#6C8863" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+  </svg>
 
-    <!-- שלב 1: הזנת טלפון -->
-    <div class="step" id="stepSearch">
-      <div class="form-group">
-        <label for="phoneInput">מספר טלפון</label>
-        <input type="tel" id="phoneInput" placeholder="0500000000" autocomplete="tel" />
-      </div>
-      <button id="findBtn" type="button">מצא את ההזמנה שלי</button>
-      <p class="msg" id="searchMsg"></p>
+  <h1>אישור איסוף ארבעת המינים</h1>
+  <p class="sub">חלוקה ביום שלישי, י״א בתשרי (22.9)<br>הזינו שם מלא או מספר טלפון כפי שמילאתם בטופס ההזמנה</p>
+
+  <div class="card">
+
+    <div class="step" id="stepPhone">
+      <label for="phone">שם מלא או מספר טלפון</label>
+      <input id="phone" type="text" placeholder="לדוגמה: ישראל ישראלי או 050-1234567" autocomplete="off" />
+      <button id="findBtn" type="button">מצא אותי</button>
+      <p class="msg" id="phoneMsg"></p>
     </div>
 
-    <!-- שלב 2: תצוגת הזמנה ואישור -->
     <div class="step" id="stepConfirm" hidden>
-      <p class="greeting">שלום, <strong id="foundName"></strong>!</p>
-      
-      <div class="order-summary">
-        <h4>פרטי ההזמנה שלך:</h4>
-        <ul id="orderDetails"></ul>
-      </div>
-
+      <p class="greeting">שלום, <strong id="foundName"></strong></p>
+      <ul class="order-details" id="orderDetails"></ul>
       <button id="confirmBtn" type="button">כן, אספתי את ארבעת המינים</button>
-      <button class="secondary" id="backBtn" type="button" style="margin-top: 10px;">זה לא אני / חזרה</button>
+      <button class="secondary" id="backBtn" type="button" style="margin-top:10px;">זה לא אני</button>
       <p class="msg" id="confirmMsg"></p>
     </div>
 
-    <!-- שלב 3: הודעת סיום -->
     <div class="step" id="stepDone" hidden>
-      <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
-      <h2 style="color: var(--palm-green); margin-bottom: 8px;">תודה רבה!</h2>
-      <p style="color: var(--text-muted); font-size: 15px;" id="doneText">האיסוף אושר בהצלחה במערכת. חג שמח!</p>
+      <div class="checkmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F1E2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12l6 6L20 6"/>
+        </svg>
+      </div>
+      <p class="done" id="doneName"></p>
+      <p class="done-sub">האיסוף נרשם, תודה!</p>
     </div>
+
   </div>
 
-  <script>
-    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxDRQqv123Ph4LsCaLrkLqCOQhDApgEMYAdOV1p1NEYcypZhaXuPkJnX98bA-YFGIrq/exec';
+  <footer>אם לא נמצאת התאמה, בדקו שהקלדתם את השם או הטלפון כפי שמילאתם בטופס ההזמנה המקורי.</footer>
+</div>
 
-    const stepSearch = document.getElementById('stepSearch');
-    const stepConfirm = document.getElementById('stepConfirm');
-    const stepDone = document.getElementById('stepDone');
+<script>
+  // ⚠️ אחרי פריסת ה-Apps Script (ראו Code.gs), הדביקו כאן את כתובת ה-/exec:
+  const WEBAPP_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
 
-    const phoneInput = document.getElementById('phoneInput');
-    const findBtn = document.getElementById('findBtn');
-    const searchMsg = document.getElementById('searchMsg');
+  const phoneInput   = document.getElementById('phone');
+  const findBtn      = document.getElementById('findBtn');
+  const phoneMsg     = document.getElementById('phoneMsg');
+  const stepPhone    = document.getElementById('stepPhone');
+  const stepConfirm  = document.getElementById('stepConfirm');
+  const stepDone     = document.getElementById('stepDone');
+  const foundName    = document.getElementById('foundName');
+  const orderDetails = document.getElementById('orderDetails');
+  const confirmBtn   = document.getElementById('confirmBtn');
+  const confirmMsg   = document.getElementById('confirmMsg');
+  const backBtn      = document.getElementById('backBtn');
+  const doneName     = document.getElementById('doneName');
 
-    const foundName = document.getElementById('foundName');
-    const orderDetails = document.getElementById('orderDetails');
-    const confirmBtn = document.getElementById('confirmBtn');
-    const backBtn = document.getElementById('backBtn');
-    const confirmMsg = document.getElementById('confirmMsg');
-    const doneText = document.getElementById('doneText');
+  let currentQuery = '';
 
-    let currentPhone = '';
+  async function callApi(action, query) {
+    const body = new URLSearchParams({ action, query });
+    const res = await fetch(WEBAPP_URL, { method: 'POST', body });
+    if (!res.ok) throw new Error('network');
+    return res.json();
+  }
 
-    // איתור הזמנה לפי טלפון
-    findBtn.addEventListener('click', async () => {
-      const phone = phoneInput.value.trim();
-      if (!phone) {
-        showMsg(searchMsg, 'נא להזין מספר טלפון.', true);
+  function renderOrderDetails(items) {
+    orderDetails.innerHTML = '';
+    if (!items || items.length === 0) return;
+    items.forEach(item => {
+      const li = document.createElement('li');
+      const label = document.createElement('span');
+      label.className = 'label';
+      label.textContent = item.label;
+      const value = document.createElement('span');
+      value.className = 'value';
+      value.textContent = item.value;
+      li.appendChild(label);
+      li.appendChild(value);
+      orderDetails.appendChild(li);
+    });
+  }
+
+  function setLoading(btn, loading, label) {
+    btn.disabled = loading;
+    btn.textContent = loading ? 'רגע...' : label;
+  }
+
+  findBtn.addEventListener('click', async () => {
+    const query = phoneInput.value.trim();
+    phoneMsg.textContent = '';
+    phoneMsg.className = 'msg';
+
+    if (WEBAPP_URL.indexOf('PASTE_YOUR') === 0) {
+      phoneMsg.textContent = 'המערכת עדיין לא מחוברת (חסרה כתובת ה-Apps Script בקובץ).';
+      phoneMsg.className = 'msg error';
+      return;
+    }
+    if (query.length < 2) {
+      phoneMsg.textContent = 'נא להזין שם מלא או מספר טלפון.';
+      phoneMsg.className = 'msg error';
+      return;
+    }
+
+    setLoading(findBtn, true, 'מצא אותי');
+    try {
+      const data = await callApi('check', query);
+      if (!data.ok) throw new Error(data.error || 'error');
+
+      if (data.ambiguous) {
+        phoneMsg.textContent = 'נמצאו כמה אנשים עם שם דומה. נסו להזין מספר טלפון במקום.';
+        phoneMsg.className = 'msg error';
+        return;
+      }
+      if (!data.found) {
+        phoneMsg.textContent = 'לא מצאנו התאמה בטופס ההזמנות. בדקו את האיות או נסו עם מספר טלפון.';
+        phoneMsg.className = 'msg error';
         return;
       }
 
-      setLoading(findBtn, true, 'מחפש...');
-      showMsg(searchMsg, '');
+      currentQuery = query;
+      foundName.textContent = data.name;
+      renderOrderDetails(data.orderDetails);
 
-      try {
-        const response = await fetch(`${WEBAPP_URL}?action=search&phone=${encodeURIComponent(phone)}`);
-        const data = await response.json();
-
-        setLoading(findBtn, false, 'מצא את ההזמנה שלי');
-
-        if (!data.ok) {
-          showMsg(searchMsg, data.error || 'אירעה שגיאה בחיבור.', true);
-          return;
-        }
-
-        if (!data.found) {
-          showMsg(searchMsg, 'לא נמצאה הזמנה עבור מספר הטלפון הזה.', true);
-          return;
-        }
-
-        currentPhone = phone;
-        foundName.textContent = data.name;
-
-        // מילוי פריטי ההזמנה
-        orderDetails.innerHTML = '';
-        if (data.items && data.items.length > 0) {
-          data.items.forEach(item => {
-            const li = document.createElement('li');
-            li.innerHTML = `<strong>${item.name}:</strong> ${item.qty}`;
-            orderDetails.appendChild(li);
-          });
-        } else {
-          orderDetails.innerHTML = '<li>לא צוינו פריטים ספציפיים.</li>';
-        }
-
-        if (data.alreadyConfirmed) {
-          stepSearch.hidden = true;
-          stepDone.hidden = false;
-          doneText.textContent = `${data.name}, כבר אישרת את איסוף ארבעת המינים בעבר. חג שמח!`;
-          return;
-        }
-
-        stepSearch.hidden = true;
-        stepConfirm.hidden = false;
-
-      } catch (err) {
-        setLoading(findBtn, false, 'מצא את ההזמנה שלי');
-        showMsg(searchMsg, 'שגיאת תקשורת. נא לנסות שוב.', true);
-      }
-    });
-
-    // אישור איסוף
-    confirmBtn.addEventListener('click', async () => {
-      setLoading(confirmBtn, true, 'מעדכן...');
-      showMsg(confirmMsg, '');
-
-      try {
-        const response = await fetch(`${WEBAPP_URL}?action=confirm&phone=${encodeURIComponent(currentPhone)}`);
-        const data = await response.json();
-
-        setLoading(confirmBtn, false, 'כן, אספתי את ארבעת המינים');
-
-        if (data.ok && data.confirmed) {
-          stepConfirm.hidden = true;
-          stepDone.hidden = false;
-          doneText.textContent = `${data.name}, אישור האיסוף נרשם בהצלחה! חג שמח!`;
-        } else {
-          showMsg(confirmMsg, data.error || 'לא ניתן היה לאשר את האיסוף.', true);
-        }
-      } catch (err) {
-        setLoading(confirmBtn, false, 'כן, אספתי את ארבעת המינים');
-        showMsg(confirmMsg, 'שגיאת תקשורת. נא לנסות שוב.', true);
-      }
-    });
-
-    // חזרה לשלב החיפוש
-    backBtn.addEventListener('click', () => {
-      stepConfirm.hidden = true;
-      stepSearch.hidden = false;
-      showMsg(searchMsg, '');
-    });
-
-    function showMsg(el, text, isError = false) {
-      el.textContent = text;
-      el.className = 'msg ' + (isError ? 'error' : 'success');
-    }
-
-    function setLoading(btn, isLoading, originalText) {
-      if (isLoading) {
-        btn.disabled = true;
-        btn.innerHTML = `<span class="spinner"></span>`;
+      if (data.alreadyConfirmed) {
+        doneName.textContent = data.name;
+        stepPhone.hidden = true;
+        stepDone.hidden = false;
+        document.querySelector('.done-sub').textContent = 'כבר אישרתם שאספתם — תודה!';
       } else {
-        btn.disabled = false;
-        btn.textContent = originalText;
+        stepPhone.hidden = true;
+        stepConfirm.hidden = false;
       }
+    } catch (err) {
+      phoneMsg.textContent = 'אירעה שגיאה בחיבור למערכת. נסו שוב.';
+      phoneMsg.className = 'msg error';
+    } finally {
+      setLoading(findBtn, false, 'מצא אותי');
     }
-  </script>
+  });
+
+  confirmBtn.addEventListener('click', async () => {
+    confirmMsg.textContent = '';
+    confirmMsg.className = 'msg';
+    setLoading(confirmBtn, true, 'כן, אספתי את ארבעת המינים');
+    try {
+      const data = await callApi('confirm', currentQuery);
+      if (!data.ok) throw new Error(data.error || 'error');
+
+      doneName.textContent = data.name;
+      stepConfirm.hidden = true;
+      stepDone.hidden = false;
+    } catch (err) {
+      confirmMsg.textContent = 'אירעה שגיאה בשמירת האישור. נסו שוב.';
+      confirmMsg.className = 'msg error';
+    } finally {
+      setLoading(confirmBtn, false, 'כן, אספתי את ארבעת המינים');
+    }
+  });
+
+  backBtn.addEventListener('click', () => {
+    stepConfirm.hidden = true;
+    stepPhone.hidden = false;
+    phoneInput.value = '';
+    phoneInput.focus();
+  });
+
+  phoneInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') findBtn.click();
+  });
+</script>
 </body>
 </html>
